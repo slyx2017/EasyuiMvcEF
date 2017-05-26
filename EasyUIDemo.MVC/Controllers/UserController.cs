@@ -98,15 +98,15 @@ namespace EasyUIDemo.MVC.Controllers
             {
                 deleteIDList.Add(Convert.ToInt32(ID));
             }
-            using (EasyUIDemoDBEntities db = new EasyUIDemoDBEntities())
-            {
-                foreach (var ID in deleteIDList)
-                {
-                    var users = db.UserInfo.Where(p => p.ID == ID).FirstOrDefault();
-                    db.UserInfo.Remove(users);
-                }
-                db.SaveChanges();
-            }
+            //using (EasyUIDemoDBEntities db = new EasyUIDemoDBEntities())
+            //{
+            //    foreach (var ID in deleteIDList)
+            //    {
+            //        var users = db.UserInfo.Where(p => p.ID == ID).FirstOrDefault();
+            //        db.UserInfo.Remove(users);
+            //    }
+            //    db.SaveChanges();
+            //}
             return Content("OK");
         }
     }

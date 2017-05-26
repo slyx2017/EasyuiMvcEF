@@ -34,7 +34,8 @@ namespace EasyUIDemo.MVC.Controllers
                 if (users.Count() > 0)
                 {
                     userInfo = users.FirstOrDefault();
-                    Response.Cookies["UserName"].Value = userInfo.Name;
+                    Session["UserName"] = userInfo.Name.Trim();
+                    Response.Cookies["UserName"].Value = userInfo.Name.Trim();
                     Response.Cookies["UserName"].Expires = DateTime.Now.AddDays(7);
                     return Json(new { result = "success", content = "" });
                 }
